@@ -22,7 +22,7 @@ function draw(s){let q=document.getElementById('session');q.textContent=s.runnin
 
 class State:
     def __init__(self) -> None:
-        self.lock = threading.Lock(); self.running = True; self.equity = 10_000.0; self.pnl = 0.0; self.tick = 0
+        self.lock = threading.Lock(); self.running = False; self.equity = 10_000.0; self.pnl = 0.0; self.tick = 0
         self.operations: list[dict[str, Any]] = []; self.events: list[dict[str, str]] = []; self.points = [{"equity": self.equity}]
         self.agents = {"Orchestrator": ("ATTIVO", "Coordina il ciclo"), "Technical Analysis": ("ATTIVO", "VWAP e ATR"), "Risk Manager": ("ATTIVO", "Controlli fail-closed"), "Paper Execution": ("ATTIVO", "Fill simulati"), "Market Scanner": ("IN PREPARAZIONE", "Multi-strumento"), "News & Sentiment": ("IN PREPARAZIONE", "Fonti non collegate"), "Strategy Engine": ("IN PREPARAZIONE", "Prima strategia nel demo"), "Performance Analyst": ("IN PREPARAZIONE", "Report avanzati")}
 
