@@ -1,0 +1,11 @@
+.aider*
+.env
+*.pyc
+*.pyc
+/venv
+*.zip
+tasks.md
+/user_data/strategies/
+/config_examples/
+/user_data
+/user_data
