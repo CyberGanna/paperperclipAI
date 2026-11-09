@@ -63,7 +63,7 @@ def main() -> None:
     orch=SimulationOrchestrator()
     def loop() -> None:
         while True: STATE.step(orch); time.sleep(2)
-    port = int(os.environ.get('PAPERPERCLIP_PORT', '8877'))
+    port = int(os.environ.get('PAPERPERCLIP_PORT', '8899'))
     threading.Thread(target=loop,daemon=True).start(); print(f'Dashboard disponibile su http://127.0.0.1:{port}'); ThreadingHTTPServer(('127.0.0.1',port),Handler).serve_forever()
 
 if __name__=='__main__': main()
